@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Paper, MenuList, MenuItem, Typography, Popper } from '@material-ui/core';
 import { apiColorUrl, apiEggUrl, apiHabitatUrl, apiUrl } from '../../../constraints/index';
+import { renderSymbol } from '../../Symbol/Symbol';
 import { connect } from 'react-redux';
 import { fetchApiMenu } from '../../../redux/actions/menuAction';
 
@@ -59,7 +60,7 @@ const HeaderItem = ({ name, listMenu, fetchApiMenu }) => {
                             <MenuList id="menu-list-grow" >
                                 {listMenu[name].listMenu.map((item, index) =>
                                     <div key={index}>
-                                        <MenuItem >{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</MenuItem>
+                                        <MenuItem >{renderSymbol(item.name, name)} {item.name.charAt(0).toUpperCase() + item.name.slice(1)}</MenuItem>
                                     </div>
                                 )}
                             </MenuList>
