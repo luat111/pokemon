@@ -14,7 +14,7 @@ const Header = () => {
             <AppBar position="static" className={classes.nav}>
                 <Toolbar>
                     <img className={classes.logo} src={logoImg} alt="logo-header" onClick={() => { window.location.reload(); }} />
-                    <AppBar position="static" className={classes.nav}>
+                    <AppBar position="relative" className={classes.nav}>
                         <Toolbar className={classes.containerNav}>
                             <HeaderItem name={"Color"} />
                             <HeaderItem name={"Egg Group"} />

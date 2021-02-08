@@ -24,8 +24,10 @@ const SymbolItemColor = (nameItem) => {
             return;
     }
 }
-const SymbolItemEgg = () => {
-    return "🥚";    
+const SymbolItemEgg = (nameItem) => {
+    if (nameItem === "no-eggs")
+        return "❌";
+    return "🥚";
 }
 const SymbolItemHabitat = (nameItem) => {
     switch (nameItem) {
@@ -54,11 +56,11 @@ const SymbolItemHabitat = (nameItem) => {
 export function renderSymbol(nameItem, nameMenu) {
     switch (nameMenu) {
         case "Color":
-            return SymbolItemColor(nameItem);            
+            return SymbolItemColor(nameItem);
         case "Egg Group":
-            return SymbolItemEgg(nameItem);            
+            return SymbolItemEgg(nameItem);
         case "Habitat":
-            return SymbolItemHabitat(nameItem);            
+            return SymbolItemHabitat(nameItem);
         default:
             return;
     }

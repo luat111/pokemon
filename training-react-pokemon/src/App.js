@@ -25,16 +25,14 @@ function App() {
   }, []);
   return (
     <HashRouter>      
-      <Header />
-      <>
+      <Header />      
         <div className="container">
           <div id="pokes" className="pokes">
             <Suspense fallback={<Loading isLoading={true} />}>
               {renderRoutes(routes)}
             </Suspense>
           </div>
-        </div>
-      </>
+        </div>      
     </HashRouter>
   );
 }

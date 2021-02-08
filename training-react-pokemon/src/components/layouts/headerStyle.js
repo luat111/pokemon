@@ -10,9 +10,10 @@ export const useStyles = makeStyles((theme) => ({
   },
   nav: {
     backgroundColor: 'black',
+    width: '97.2%',
   },
-  containerNav: {    
-    flexDirection:'row',
+  containerNav: {
+    flexDirection: 'row',
     alignSelf: 'center'
   },
 }));

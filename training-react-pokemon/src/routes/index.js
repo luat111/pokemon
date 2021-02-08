@@ -1,13 +1,15 @@
-//import { lazy } from 'react';
+import { lazy } from 'react';
+
+const ListPokemon = lazy(() => import('../components/Pokemon/ListPokemon/listPokemon'));
 
 export const routes = [
-    // {
-    //     path: '/',
-    //     exact: true,
-    //     component: Header
-    // },
-    // {
-    //     path: '*',
-    //     component: null
-    // }
+    {
+        path: '/',
+        exact: true,
+        component: ListPokemon
+    },
+    {
+        path: '*',
+        component: null
+    }
 ]
