@@ -12,7 +12,7 @@ function getMenu(state = initialState, action) {
                 ...state,
                 isLoading: true
             };
-        case FETCH_DATA_MENU_COMPLETE:
+        case FETCH_DATA_MENU_COMPLETE:            
             return {
                 ...state,
                 isLoading: false,

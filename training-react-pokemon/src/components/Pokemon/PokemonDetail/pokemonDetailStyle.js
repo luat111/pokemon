@@ -33,7 +33,7 @@ export const useStyles = makeStyles((theme) => ({
         backgroundColor: 'inherit',
         display: 'flex',
         flexDirection: 'column',
-        paddingRight: 350,
+        paddingRight: 200,
         paddingTop: 35
     },
     container: {

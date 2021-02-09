@@ -53,6 +53,50 @@ const SymbolItemHabitat = (nameItem) => {
             return "";
     }
 }
+const SymbolItemType = (nameItem) => {
+    switch (nameItem) {
+        case "normal":
+            return "🚫";
+        case "fighting":
+            return "👊";
+        case "flying":
+            return "🌪️";
+        case "poison":
+            return "☠️";
+        case "ground":
+            return "🟤";
+        case "rock":
+            return "🎢";
+        case "bug":
+            return "🐞";
+        case "ghost":
+            return "👻";
+        case "steel":
+            return "🛡️";
+        case "fire":
+            return "🔥";
+        case "water":
+            return "🌊";
+        case "grass":
+            return "🍀";
+        case "electric":
+            return "⚡";
+        case "psychic":
+            return "🔮";
+        case "dragon":
+            return "🐉";
+        case "dark":
+            return "⚫";
+        case "fairy":
+            return "🧚";
+        case "unknown":
+            return "❓";
+        case "shadow":
+            return "🌑";        
+        default:
+            return "";
+    }
+}
 export function renderSymbol(nameItem, nameMenu) {
     switch (nameMenu) {
         case "Color":
@@ -61,6 +105,8 @@ export function renderSymbol(nameItem, nameMenu) {
             return SymbolItemEgg(nameItem);
         case "Habitat":
             return SymbolItemHabitat(nameItem);
+        case "Type":
+            return SymbolItemType(nameItem);
         default:
             return;
     }

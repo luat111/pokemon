@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Avatar, Badge, Chip, Typography } from '@material-ui/core';
 import { apiImg, apiGif, apiImgBackGround } from '../../../constraints/index';
-
+import { Link } from 'react-router-dom';
 import { useStyles } from './pokemonItemsStyle';
 
 function PokemonItem({ id, name }) {
@@ -28,15 +28,17 @@ function PokemonItem({ id, name }) {
                     </div>
                 </Badge>
                 <div onMouseOver={() => { setChip(true) }} onMouseLeave={() => { setChip(false) }}>
-                    <Chip
-                        className={classes.chip}
-                        label={<Typography className={classes.label}>#{id}-{name.charAt(0).toUpperCase() + name.slice(1)}</Typography>}
-                        clickable={true}
-                        variant={chip ? "default" : "outlined"}
-                        color="primary"
-                        component="a"
-                        href={`/pokemon/${id}/${name}`}
-                    />
+                    <Link to={{pathname: '/pokemon/'+id+'/'+ name}}>
+                        <Chip
+                            className={classes.chip}
+                            label={<Typography className={classes.label}>#{id}-{name.charAt(0).toUpperCase() + name.slice(1)}</Typography>}
+                            clickable={true}
+                            variant={chip ? "default" : "outlined"}
+                            color="primary"
+                        // component="a"
+                        // href={`/pokemon/${id}/${name}`}
+                        />
+                    </Link>
                 </div>
             </div>
         </>

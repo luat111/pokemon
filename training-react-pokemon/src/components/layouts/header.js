@@ -3,7 +3,7 @@ import { AppBar, Toolbar } from '@material-ui/core';
 import logoImg from '../../img/LogoPoke.png';
 import HeaderItem from './HeaderItem/headerItem';
 import SearchBar from './SearchLayout/searchLayout';
-
+import { Link } from 'react-router-dom';
 import { useStyles } from './headerStyle';
 
 const Header = () => {
@@ -13,7 +13,9 @@ const Header = () => {
         <div className={classes.root}>
             <AppBar position="static" className={classes.nav}>
                 <Toolbar>
-                    <img className={classes.logo} src={logoImg} alt="logo-header" onClick={() => { window.location.reload(); }} />
+                    <Link to={{ pathname: '/' }}>
+                        <img className={classes.logo} src={logoImg} alt="logo-header" />
+                    </Link>
                     <AppBar position="relative" className={classes.nav}>
                         <Toolbar className={classes.containerNav}>
                             <HeaderItem name={"Color"} />
