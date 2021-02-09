@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Avatar, Badge, Chip, Typography } from '@material-ui/core';
-import { apiImg, apiGif, apiImgBackGround, apiGifBackGround } from '../../../constraints/index';
+import { apiImg, apiGif, apiImgBackGround } from '../../../constraints/index';
 
 import { useStyles } from './pokemonItemsStyle';
 
@@ -35,7 +35,7 @@ function PokemonItem({ id, name }) {
                         variant={chip ? "default" : "outlined"}
                         color="primary"
                         component="a"
-                    //href="#chip"
+                        href={`/pokemon/${id}/${name}`}
                     />
                 </div>
             </div>
