@@ -10,7 +10,7 @@ const Header = () => {
     
     return (
         <div className={classes.root} id='header'>
-            <AppBar position="static" className={classes.nav}>
+            <AppBar className={classes.nav}>
                 <Toolbar>
                     <Link to={{ pathname: '/pokemon' }}>
                         <img className={classes.logo} src={logoImg} alt="logo-header" />

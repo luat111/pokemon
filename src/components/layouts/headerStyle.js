@@ -9,8 +9,7 @@ export const useStyles = makeStyles((theme) => ({
     marginRight: 20,
   },
   nav: {
-    backgroundColor: 'black',
-    width: '97.2%',
+    backgroundColor: 'black',    
   },
   containerNav: {
     flexDirection: 'row',

@@ -5,7 +5,7 @@ export const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
-        width: 650,
+        width: 555,
         height: 555,
     },
     stats: {
@@ -19,7 +19,7 @@ export const useStyles = makeStyles((theme) => ({
     },
     infoContainer: {
         backgroundColor: '#f0e7ff',
-        width: 650,
+        width: 555,
         height: 555,
         borderRadius: 10,
         borderStyle: 'outset',
@@ -27,7 +27,8 @@ export const useStyles = makeStyles((theme) => ({
         borderWidth: 'medium',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 35
     },
     info: {
         backgroundColor: 'inherit',
@@ -37,8 +38,11 @@ export const useStyles = makeStyles((theme) => ({
     },
     container: {
         display: 'flex',
-        justifyContent: 'space-around',
-        paddingTop: 30
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingTop: 70,
+        paddingLeft: 160
     },
     imgPokemon: {
         backgroundColor: 'white',
@@ -78,9 +82,9 @@ export const useStyles = makeStyles((theme) => ({
         paddingBottom: 5
     },
     chipContainer: {
-        marginTop:'auto'
+        marginTop: 'auto'
     },
     chip: {
-     
+
     }
 }));
