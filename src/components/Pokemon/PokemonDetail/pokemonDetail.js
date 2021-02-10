@@ -102,26 +102,26 @@ function PokemonDetail({ detailPokemon, fetchApiDetailPokemon }) {
                         </Paper>
                         <Paper elevation={0} className={classes.info}>
                             <Typography className={classes.infoPokemon} >
-                                Color:  {infoData.color.name.charAt(0).toUpperCase() +
+                                Color -  {infoData.color.name.charAt(0).toUpperCase() +
                                     infoData.color.name.slice(1)} {renderSymbol(infoData.color.name, "Color")}
                             </Typography>
                             <Typography className={classes.infoPokemon} >
-                                Base Exp:  {detailData.base_experience}xp
+                                Base Exp - {detailData.base_experience}xp
                             </Typography>
                             <Typography className={classes.infoPokemon} >
-                                Egg Group:  {eggGroup.slice(0, -2)}
+                                Egg Group -  {eggGroup.slice(0, -2)}
                             </Typography>
                             <Typography className={classes.infoPokemon} >
-                                Habitat:  {infoData.habitat ? infoData.habitat.name.charAt(0).toUpperCase() +
+                                Habitat -  {infoData.habitat ? infoData.habitat.name.charAt(0).toUpperCase() +
                                     infoData.habitat.name.slice(1) + ' ' +
                                     renderSymbol(infoData.habitat.name, "Habitat") : '❓'}
                             </Typography>
                             <Typography className={classes.infoPokemon} >
-                                Abilities:  {detailData.abilities[0].ability.name.charAt(0).toUpperCase() +
+                                Abilities -  {detailData.abilities[0].ability.name.charAt(0).toUpperCase() +
                                     detailData.abilities[0].ability.name.slice(1)}
                             </Typography>
                             <Typography className={classes.infoPokemon} >
-                                Hatching Egg Time:  {infoData.hatch_counter}
+                                Hatching Egg Time -  {infoData.hatch_counter}
                             </Typography>
                             <Typography className={classes.infoPokemon} >
                                 Evolution From:
