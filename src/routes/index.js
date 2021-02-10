@@ -5,7 +5,7 @@ const PokemonDetail = lazy(() => import('../components/Pokemon/PokemonDetail/pok
 const SearchPokemon = lazy(() => import('../components/Pokemon/ListSearchedPokemon/listSearchedPokemon'));
 export const routes = [
     {
-        path: '/',
+        path: '/pokemon',
         exact: true,
         component: ListPokemon
     },
