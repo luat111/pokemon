@@ -4,9 +4,7 @@ export const useStyles = makeStyles((theme) => ({
     containerBackGround: {
         paddingTop: 10,
         backgroundColor: '#ffff',
-        height: '100vh',
-        display: 'flex',        
-        flexDirection: 'column',
+        height: '100vh'
     },
     root: {
         flexGrow: 1,
@@ -21,9 +19,4 @@ export const useStyles = makeStyles((theme) => ({
         border: 'solid',
         borderWidth: 3,
     },
-    button: {
-        width: 200,
-        marginLeft:'auto',
-        marginRight:'auto',        
-    }
 }));

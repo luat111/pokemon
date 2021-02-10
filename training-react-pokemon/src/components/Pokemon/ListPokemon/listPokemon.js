@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Container, Typography, Grid, Paper } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import { Container, Typography, Grid, Paper, Button } from '@material-ui/core';
 import { apiUrl } from '../../../constraints/index';
 import { fetchApiListPokemon } from '../../../redux/actions/pokemonAction';
 import { connect } from 'react-redux';
@@ -8,12 +8,19 @@ import { useStyles } from './listPokemonStyle';
 
 function ListPokemon({ listPokemon, fetchApiListPokemon }) {
     const classes = useStyles();
-
+    const [loadMore, setLoadMore] = useState(false);
     useEffect(() => {
-        let url = apiUrl + 'pokemon?limit=25&offset=0';
+        let url = apiUrl + 'pokemon?limit=24&offset=0';
         fetchApiListPokemon(url);
     }, [fetchApiListPokemon]);
-
+    useEffect(() => {
+        if (loadMore && listPokemon.data) {
+            let offset = listPokemon.data.length;
+            let url = apiUrl + 'pokemon?limit=24&offset=' + offset;
+            setLoadMore(false);
+            fetchApiListPokemon(url);
+        }
+    }, [loadMore, listPokemon, fetchApiListPokemon])
     return (
         <React.Fragment>
             <Container >
@@ -28,6 +35,10 @@ function ListPokemon({ listPokemon, fetchApiListPokemon }) {
                                 </Grid>
                             ))}
                     </Grid>
+                    <br />
+                    <Button onClick={() => { setLoadMore(loadMore => !loadMore) }} className={classes.button} variant="outlined" color="primary" >
+                        Load more ...
+                    </Button>
                 </Typography>
             </Container>
         </React.Fragment>

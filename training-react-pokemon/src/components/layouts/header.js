@@ -5,12 +5,11 @@ import HeaderItem from './HeaderItem/headerItem';
 import SearchBar from './SearchLayout/searchLayout';
 import { Link } from 'react-router-dom';
 import { useStyles } from './headerStyle';
-
 const Header = () => {
     const classes = useStyles();
-
+    
     return (
-        <div className={classes.root}>
+        <div className={classes.root} id='header'>
             <AppBar position="static" className={classes.nav}>
                 <Toolbar>
                     <Link to={{ pathname: '/' }}>

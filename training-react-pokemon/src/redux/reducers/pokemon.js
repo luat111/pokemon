@@ -13,9 +13,11 @@ function getListPokemon(state = initialState, action) {
                 isLoading: true
             };
         case FETCH_DATA_POKEMON_COMPLETE:
-            return {                
+            let temp = state.data ? state.data : [];
+            temp = [...temp, ...action.payload.fetchedData]
+            return {
                 isLoading: false,
-                data: action.payload.fetchedData
+                data: temp
             };
         default:
             return state;
@@ -24,9 +26,9 @@ function getListPokemon(state = initialState, action) {
 
 function listPokemon(state = {}, action) {
     switch (action.type) {
-        case FETCH_DATA_POKEMON:           
+        case FETCH_DATA_POKEMON:
         case FETCH_DATA_POKEMON_COMPLETE:
-            return getListPokemon(state,action);
+            return getListPokemon(state, action);
         default:
             return state;
     }

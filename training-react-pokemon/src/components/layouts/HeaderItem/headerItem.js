@@ -4,9 +4,8 @@ import { apiColorUrl, apiEggUrl, apiHabitatUrl, apiUrl } from '../../../constrai
 import { renderSymbol } from '../../Symbol/Symbol';
 import { connect } from 'react-redux';
 import { fetchApiMenu } from '../../../redux/actions/menuAction';
-
+import { Link } from 'react-router-dom';
 import { useStyles } from './headerItemStyle';
-
 const HeaderItem = ({ name, listMenu, fetchApiMenu }) => {
     const classes = useStyles();
     const [menuSpan, setMenuSpan] = useState(false);
@@ -60,7 +59,13 @@ const HeaderItem = ({ name, listMenu, fetchApiMenu }) => {
                             <MenuList id="menu-list-grow" >
                                 {listMenu[name].listMenu.map((item, index) =>
                                     <div key={index}>
-                                        <MenuItem >{renderSymbol(item.name, name)} {item.name.charAt(0).toUpperCase() + item.name.slice(1)}</MenuItem>
+                                        <Link
+                                            to={{ pathname: `/list-by/${item.url.replace(apiUrl, '')}` }}
+                                            style={{ textDecoration: 'none' }}>
+                                            <MenuItem >
+                                                {renderSymbol(item.name, name)} {item.name.charAt(0).toUpperCase() + item.name.slice(1)}
+                                            </MenuItem>
+                                        </Link>
                                     </div>
                                 )}
                             </MenuList>

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useStyles } from './pokemonDetailStyle';
 import { connect } from 'react-redux';
 import { fetchApiDetailPokemon } from '../../../redux/actions/pokemonDetailAction'
-import { apiImgBackGround, apiGif, apiUrl } from '../../../constraints/index';
+import { apiGif, apiUrl } from '../../../constraints/index';
 import Loading from '../../Loading/loading';
 import Stat from './StatPokemon/statPokemon';
 import { renderSymbol } from '../../Symbol/Symbol';
@@ -35,7 +35,10 @@ function PokemonDetail({ detailPokemon, fetchApiDetailPokemon }) {
             {detailPokemon[id] && !detailPokemon[id].isLoading ?
                 <Typography component='div' className={classes.container}>
                     <Paper elevation={0} className={classes.statContainer}>
-                        <img className={classes.imgPokemon} alt="img-pokemon" src={`${apiImgBackGround}` + id + ".svg"} />
+                        <img className={classes.imgPokemon} alt="img-pokemon" src={
+                            detailData.sprites.other.dream_world.front_default ||
+                            detailData.sprites.other['official-artwork'].front_default
+                        } />
                         <Paper elevation={0} className={classes.stats} >
                             <Paper elevation={0} className={classes.nameContainer}>
                                 <Typography variant='h6' className={classes.titlePokemon} >
@@ -92,7 +95,10 @@ function PokemonDetail({ detailPokemon, fetchApiDetailPokemon }) {
                             <p className={classes.titlePokemon} >
                                 INFO - {name.toUpperCase()}&nbsp;&nbsp;
                         </p>
-                            <Avatar sizes='50px' variant="square" alt="gif-info-pokemon" src={`${apiGif}` + id + ".gif"} />
+                            <Avatar sizes='50px' variant="square" alt="gif-info-pokemon" src={
+                                detailData.sprites.versions['generation-v']['black-white'].animated.front_default ||
+                                detailData.sprites.front_default
+                            } />
                         </Paper>
                         <Paper elevation={0} className={classes.info}>
                             <Typography className={classes.infoPokemon} >
@@ -106,8 +112,9 @@ function PokemonDetail({ detailPokemon, fetchApiDetailPokemon }) {
                                 Egg Group:  {eggGroup.slice(0, -2)}
                             </Typography>
                             <Typography className={classes.infoPokemon} >
-                                Habitat:  {infoData.habitat.name.charAt(0).toUpperCase() +
-                                    infoData.habitat.name.slice(1)} {renderSymbol(infoData.habitat.name, "Habitat")}
+                                Habitat:  {infoData.habitat ? infoData.habitat.name.charAt(0).toUpperCase() +
+                                    infoData.habitat.name.slice(1) + ' ' +
+                                    renderSymbol(infoData.habitat.name, "Habitat") : '❓'}
                             </Typography>
                             <Typography className={classes.infoPokemon} >
                                 Abilities:  {detailData.abilities[0].ability.name.charAt(0).toUpperCase() +
@@ -116,16 +123,14 @@ function PokemonDetail({ detailPokemon, fetchApiDetailPokemon }) {
                             <Typography className={classes.infoPokemon} >
                                 Hatching Egg Time:  {infoData.hatch_counter}
                             </Typography>
-                            <Paper elevation={0} style={{backgroundColor:'inherit',display:'flex',flexDirection:'column'}}>
-                                <Typography className={classes.infoPokemon} >
-                                    Evolution From:
+                            <Typography className={classes.infoPokemon} >
+                                Evolution From:
                                 {evlFrom ?
-                                        <Avatar style={{ paddingLeft: 10, paddingTop: 5, width: 50, height: 50 }}
-                                            alt="gif-info-pokemon" src={`${apiGif}` + evlFrom + ".gif"} /> :
-                                        <>🥚</>
-                                    }
-                                </Typography>
-                            </Paper>
+                                    <Avatar style={{ paddingLeft: 10, paddingTop: 5, width: 50, height: 50 }}
+                                        alt="gif-info-pokemon" src={`${apiGif}` + evlFrom + ".gif"} /> :
+                                    <>🥚</>
+                                }
+                            </Typography>
                         </Paper>
                     </Paper>
                 </Typography> : <Loading isLoading={true} />
