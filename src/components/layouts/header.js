@@ -13,8 +13,8 @@ const Header = ({ listSearchedPokemon, searchPokemonByName }) => {
 
     const handleChange = (e) => {
         const { value } = e.target;
-        let url = apiUrl + 'pokemon/' + value;
-        searchPokemonByName(url, value);
+        let url = apiUrl + 'pokemon/' + value.trim();
+        searchPokemonByName(url, value.trim());
     }
     const dataSearch = listSearchedPokemon.dataSearchByName ? listSearchedPokemon.dataSearchByName : {};
     return (
