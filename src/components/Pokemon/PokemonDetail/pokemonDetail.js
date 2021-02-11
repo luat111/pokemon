@@ -94,7 +94,7 @@ function PokemonDetail({ detailPokemon, fetchApiDetailPokemon }) {
                         <Paper elevation={0} className={classes.nameContainer}>
                             <p className={classes.titlePokemon} >
                                 INFO - {name.toUpperCase()}&nbsp;&nbsp;
-                        </p>
+                            </p>
                             <Avatar sizes='50px' variant="square" alt="gif-info-pokemon" src={
                                 detailData.sprites.versions['generation-v']['black-white'].animated.front_default ||
                                 detailData.sprites.front_default
@@ -126,7 +126,7 @@ function PokemonDetail({ detailPokemon, fetchApiDetailPokemon }) {
                             <Typography className={classes.infoPokemon} >
                                 Evolution From:
                                 {evlFrom ?
-                                    <Avatar style={{ paddingLeft: 10, paddingTop: 5, width: 50, height: 50 }}
+                                    <img style={{ paddingLeft: 10, paddingTop: 5, width: 50, height: 50 }}
                                         alt="gif-info-pokemon" src={`${apiGif}` + evlFrom + ".gif"} /> :
                                     <>🥚</>
                                 }

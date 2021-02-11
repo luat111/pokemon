@@ -1,5 +1,5 @@
 import {
-    SEARCH_POKEMOM, SEARCH_POKEMOM_COMPLETE,
+    SEARCH_POKEMOM, SEARCH_POKEMOM_COMPLETE, SEARCH_POKEMOM_BY_NAME, SEARCH_POKEMOM_BY_NAME_COMPELETE
 } from '../actionTypes/searchPokemonActionType';
 import { fetchData } from '../../api/index';
 
@@ -10,15 +10,12 @@ const searchPokemon = (searchBy) => {
     }
 
 }
-
 const searchPokemonComplete = (searchBy, fetchedData) => {
     return {
         type: SEARCH_POKEMOM_COMPLETE,
         payload: { searchBy, fetchedData }
     }
 }
-
-
 export const fetchApiSearchPokemon = (url, searchBy) => async (dispatch) => {
     try {
         await dispatch(searchPokemon(searchBy));
@@ -29,4 +26,20 @@ export const fetchApiSearchPokemon = (url, searchBy) => async (dispatch) => {
         console.log(err);
     }
 }
+
+
+export const searchPokemonByName = (url, pokemonName) => {
+    return {
+        type: SEARCH_POKEMOM_BY_NAME,
+        payload: { url, pokemonName }
+    }
+}
+export const searchPokemonByNameCompelete = (pokemonName, fetchedData) => {
+    return {
+        type: SEARCH_POKEMOM_BY_NAME_COMPELETE,
+        payload: { pokemonName, fetchedData }
+    }
+}
+
+
 

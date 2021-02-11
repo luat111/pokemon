@@ -9,10 +9,15 @@ export const useStyles = makeStyles((theme) => ({
     marginRight: 20,
   },
   nav: {
-    backgroundColor: 'black',    
+    backgroundColor: 'black',
+    justifyContent: 'space-evenly'
   },
   containerNav: {
     flexDirection: 'row',
     alignSelf: 'center'
   },
+  itemMenu: {
+    margin: 'inherit',
+    paddingTop: 35,
+  }
 }));
