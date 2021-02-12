@@ -18,6 +18,6 @@ export const useStyles = makeStyles((theme) => ({
   },
   itemMenu: {
     margin: 'inherit',
-    paddingTop: 35,
+    display: 'flex'
   }
 }));

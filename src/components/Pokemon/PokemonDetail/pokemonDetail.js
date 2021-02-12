@@ -55,13 +55,13 @@ function PokemonDetail({ detailPokemon, fetchApiDetailPokemon }) {
                                 <Grid item>
                                     <Paper elevation={0} className={classes.statItemWrap}>
                                         <Stat nameStat={"Attack"} value={detailData.stats[1].base_stat} />
-                                        <Stat nameStat={"Special-Attack"} value={detailData.stats[3].base_stat} />
+                                        <Stat nameStat={"Sp-Attack"} value={detailData.stats[3].base_stat} />
                                     </Paper>
                                 </Grid>
                                 <Grid item>
                                     <Paper elevation={0} className={classes.statItemWrap}>
                                         <Stat nameStat={"Denfense"} value={detailData.stats[2].base_stat} />
-                                        <Stat nameStat={"Special-Denfense"} value={detailData.stats[4].base_stat} />
+                                        <Stat nameStat={"Sp-Denfense"} value={detailData.stats[4].base_stat} />
                                     </Paper>
                                 </Grid>
                             </Grid>
